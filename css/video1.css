@@ -1,0 +1,252 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'LINESeedKR-Bd';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ClimateCrisisKRVF';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/ClimateCrisisKRVF.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0; padding: 0; 
+    box-sizing: border-box;
+    font-family: 'LINESeedKR-Bd';
+}
+*::selection {
+    background-color: #d0ffeb;
+    color: #07dd8f;
+}
+a {
+    color: #333;
+    text-decoration: none;
+}
+hr {
+    margin-bottom: 30px;
+}
+
+/* ---------------------------------- */
+
+/* header */
+
+
+/* main */
+main {
+    max-width: 100%;
+    background-color: #0e0e0e;
+    /* overflow: hidden; */
+}
+
+/* main - depth1 */
+main .depth1 {
+    width: 100%; height: 100vh;
+}
+main .depth1 .inner {
+    width: 100%; height: 100%;
+}
+main .depth1 .inner > div {
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    position: relative;
+    z-index: 99;
+    backdrop-filter: blur(5px);
+}
+main .depth1 > div h1 {
+    width: 100%;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 9;
+    color: #ff6200;
+    font-family: 'ClimateCrisisKRVF';
+    font-size: 4rem;
+    text-align: center;
+    letter-spacing: 3px;   
+}
+main .depth1 .inner > div > span {
+    display: block;
+    width: 60px; height: 50px;
+    position: absolute;
+    bottom: 10px; left: 50%;
+    transform: translate(-50%);
+    animation: scroll 1.1s linear infinite;
+    text-align: center;
+}
+@keyframes scroll {
+    0% { bottom: 10px; } 
+    50% { bottom: 22px; }
+    100% { bottom: 10px; }
+}
+main .depth1 .inner > div > span p {
+    color: #e7e7e7;
+    font-family: 'ClimateCrisisKRVF';
+}
+main .depth1 .inner > div > span i {
+    color: #e7e7e7;
+}
+
+
+main .depth1 video {
+    display: block;
+    width: 100%; height: 100vh;
+    position: absolute;
+    top: 0; left: 0;
+    object-fit: cover;
+}
+
+
+/* main depth2 */
+main .depth2 {
+    width: 100%; height: 300vh;
+}
+main .depth2 .inner {
+    display: flex;
+    width: 100%; height: 300vh;
+}
+main .depth2 .explain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: sticky;
+    top: 5%; left: 0;
+    width: 30%; height: 500px;
+    margin: 250px 50px 10px 70px;
+    padding: 0 30px;
+    background-color: #f6f6f5;
+    border-radius: 20px;
+}
+main .depth2 .explain h2 {
+    font-size: 2rem;
+}
+main .depth2 .explain p {
+    padding: 30px 0;
+    font-family: 'SUIT-Regular';
+}
+main .depth2 .explain > div {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    font-family: 'SUIT-Regular';
+}
+main .depth2 .explain > div span {
+    display: block;
+    width: 32%;
+    padding-left: 5px;
+    font-size: .8rem;
+}
+
+
+main .depth2 .detail {
+    width: 70%;
+}
+main .depth2 .detail .inner {
+    width: 100%;
+    padding-top: 100px;
+}
+main .depth2 .detail .aos {
+    width: 95%;
+    position: relative;
+}
+main .depth2 .detail .aos span {
+    display: block;
+    width: 500px; height: 300px;
+}
+main .depth2 .detail .aos > span:nth-child(1) {
+    position: absolute;
+    top: 8%; left: 5%;
+    background: url('../image/video1_1.png') no-repeat center/cover;
+}
+main .depth2 .detail .aos > span:nth-child(2) {
+    position: absolute;
+    top: 12%; right: 5%;
+    background: url('../image/video1_2.png') no-repeat center/cover;
+}
+main .depth2 .detail .aos > span:nth-child(3) {
+    position: absolute;
+    top: 25%; left: 29%;
+        background: url('../image/video1_3.png') no-repeat center/cover;
+}
+main .depth2 .detail .aos > span:nth-child(4) {
+    position: absolute;
+    top: 39%; left: 5%;
+        background: url('../image/video1_4.png') no-repeat center/cover;
+}
+main .depth2 .detail .aos > span:nth-child(5) {
+    position: absolute;
+    top: 43%; right: 5%;
+        background: url('../image/video1_5.png') no-repeat center/cover;
+}
+main .depth2 .detail .aos iframe {
+    width: 900px; height: 506px;
+    position: absolute;
+    top: 61%; left: 15%;
+    border-width: 0;
+}
+main .depth2 .detail .aos .cover {
+    width: 900px; height: 506px;
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 61%; left: 15%;
+    z-index: 999999;
+}
+
+
+
+/* main depth3 */
+main .depth3 {
+    width: 100%; 
+    padding: 300px 0;
+}
+main .depth3 h1 {
+    padding-left: 60px;
+    color: #ff6200;
+    font-size: 5rem;
+}
+main .depth3 .inner {
+    display: flex;
+    justify-content: space-evenly;
+}
+main .depth3 .inner > span {
+    display: block;
+    margin-top: 80px;
+    border-radius: 20px;
+}
+main .depth3 .inner > span:nth-child(1) {
+    background: url('../image/photo_4.jpg') no-repeat center/cover;
+}
+main .depth3 .inner > span:nth-child(2) {
+    background: url('../image/photo_5.jpg') no-repeat center/cover;
+}
+main .depth3 .inner > span:nth-child(3) {
+    background: url('../image/photo_6.jpg') no-repeat center/cover;
+}
+main .depth3 .inner > span a {
+    display: block;
+    width: 500px; height: 300px;
+    
+}
+
+
+/* footer */
+footer {
+    width: 100%; height: 150px;
+    background-color: #000;
+}
+footer .inner p {
+    color: #f6f6f5;
+    font-family: 'SUIT-Regular';
+    font-size: .9rem;
+    text-align: center;
+    line-height: 150px;
+}

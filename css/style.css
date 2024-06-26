@@ -1,0 +1,766 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'LINESeedKR-Bd';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    margin: 0; padding: 0; 
+    box-sizing: border-box;
+    font-family: 'SUIT-Regular';
+    }
+    ul {
+        list-style: none;
+        }
+        a {
+    color: #222;
+    text-decoration: none;
+    }
+    
+.fp-controlArrow.fp-prev {
+    width: 55px; height: 55px;
+    margin-left: 50px;
+    border-color: none;
+    border-width: 0;
+    background: url('../image/left-arrow.png') no-repeat center/cover;
+}
+.fp-controlArrow.fp-next {
+    width: 55px; height: 55px;
+    margin-right: 50px;
+    border-color: none;
+    border-width: 0;
+    background: url('../image/right-arrow.png') no-repeat center/cover;
+}
+    
+    /* 드래그했을때 색깔 바꾸는 속성 */
+    *::selection {
+        background-color: #ecf863;
+        color: rgb(83, 206, 83);
+        }
+
+
+/* ---------------------------------- */
+
+/* header */
+header {
+    width: 100%;
+    padding-top: 30px;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 99;
+}
+header .inner {
+    position: relative;
+}
+header .pc-nav {
+    display: block;
+}
+header .pc-nav ul {
+    display: flex;
+    justify-content: center;
+}
+header .pc-nav ul li {
+    padding: 0 20px;
+    border-right: 1px solid #777;
+}
+
+header .pc-nav ul li:last-child {
+    border-right: none;
+}
+
+header .pc-nav ul li a {
+    color: #333;
+    font-weight: 1rem;
+}
+
+
+/* 모바일 nav */
+.mobile-nav { 
+    display: none;
+    width: 100%; height: 410px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: -410px;
+    text-align: center;
+    z-index: 999;
+    transition: all .5s;
+}
+.mobile-nav.on {
+    top: 0;
+}
+.mobile-nav li {
+    line-height: 80px;
+}
+.mobile-nav li a {
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+/* 모바일 nav 버튼 */
+.mobile-nav-btn {
+    display: none;
+    width: 100%;
+    margin: 5px auto;
+    position: absolute;
+    top: 100.5%;
+    text-align: right;
+}
+.mobile-nav-btn a {
+    margin-right: 10%;
+    padding: 7px 25px;
+    background-color: aqua;
+    border-radius: 0 0 10px 10px;
+}
+.mobile-nav-btn a::after {
+    content: '▼';
+}
+
+/* jquery에서 추가할 class */
+header ul li a.on {
+    font-weight: bold;
+    color: rgb(250, 93, 145);
+}
+.mobile-nav-btn a.up {
+    width: 100%;
+    background-color: blue;
+}
+.mobile-nav-btn a.up::after {
+    content: '▲';
+    width: 100%;
+}
+
+
+/* main */
+main {
+    max-width: 100%;
+    text-align: center;
+}
+
+
+/* main - Home */
+
+
+
+/* main - about */
+main .about {
+    width: 100%; height: 100%;
+    }
+main .about .inner {
+    width: 100%; height: 100%;
+}
+main .about .large-page {
+    display: block;
+    width: 100%; height: 100%;
+    position: relative;
+}
+main .about .me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px; height: 450px;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
+main .about .me img {
+    width: 250px; height: 450px;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 999;
+}
+main .about .me .icon {
+    width: 250px; height: 450px;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: .9;
+}
+main .about .icon span {
+    width: 100px; height: 100px;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -99;
+    transition: all .7s;
+}
+
+main .about .icon span:nth-child(1) {
+    top: 45%; left: 45%;
+    background: url('../image/icon_AE.png') no-repeat center/contain;
+}
+main .about .icon span:nth-child(2) {
+        top: 45%; left: 45%;
+    background: url('../image/icon_AI.png') no-repeat center/contain;
+}
+main .about .icon span:nth-child(3) {
+        top: 45%; left: 45%;
+    background: url('../image/icon_PS.png') no-repeat center/contain;
+}
+main .about .icon span:nth-child(4) {
+        top: 45%; left: 45%;
+    background: url('../image/icon_PR.png') no-repeat center/contain;
+}
+main .about .icon span:nth-child(5) {
+    background: url('../image/icon_HTML.png') no-repeat center/contain;
+}
+main .about .icon span:nth-child(6) {
+    background: url('../image/icon_blender.png') no-repeat center/contain;
+}
+main .about .icon span:nth-child(7) {
+    background: url('../image/icon_CSS.png') no-repeat center/contain;
+}
+main .about .icon span:nth-child(8) {
+    background: url('../image/icon_JS.png') no-repeat center/contain;
+}
+
+/* 원래 퍼지는 위치 */
+main .about .icon span.idx-1 {
+    display: block;
+    top: 50%; left: -250%;
+}
+main .about .icon span.idx-2 {
+    display: block;
+    top: 10%; left: -180%;
+}
+main .about .icon span.idx-3 {
+    display: block;
+    top: 50%; left: -110%;
+}
+main .about .icon span.idx-4 {
+    display: block;
+    top: 90%; left: -180%;
+}
+main .about .icon span.idx-5 {
+    display: block;
+    top: 50%; left: 220%;
+}
+main .about .icon span.idx-6 {
+    display: block;
+    top: 10%; left: 290%;
+}
+main .about .icon span.idx-7 {
+    display: block;
+    top: 50%; left: 360%;
+}
+main .about .icon span.idx-8 {
+    display: block;
+    top: 90%; left: 290%;
+}
+
+/* 반응형1 일 때 퍼지는 위치 */
+main .about .icon span.res1-1 {
+    display: none;
+    top: 30%; left: -30%;
+}
+main .about .icon span.res1-2 {
+    display: none;
+    top: 30%; left: -80%;
+}
+main .about .icon span.res1-3 {
+    display: none;
+    top: 60%; left: -30%;
+}
+main .about .icon span.res1-4 {
+    display: none;
+    top: 60%; left: -80%;
+}
+main .about .icon span.res1-5 {
+    display: none;
+    top: 30%; left: 130%;
+}
+main .about .icon span.res1-6 {
+    display: none;
+    top: 30%; left: 180%;
+}
+main .about .icon span.res1-7 {
+    display: none;
+    top: 60%; left: 130%;
+}
+main .about .icon span.res1-8 {
+    display: none;
+    top: 60%; left: 180%;
+}
+
+main .about .me-hover {
+    display: none;
+    width: 250px; height: 450px;
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
+main .about .me-hover .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%; height: 100%;
+    padding-left: 30px;
+    text-align: left;
+}
+main .about .me-hover .text p {
+    color: #fff;
+    font-size: .7rem;
+}
+main .about .me-hover .text p:nth-child(2n) {
+    font-size: .8rem;
+    font-weight: lighter;
+}
+main .about .me-hover .text p:nth-child(2n+1) {
+    padding-top: 13px;
+}
+
+
+/* 반응형2(모바일)에서 보일 class */
+main .about .small-page {
+    display: none;
+    width: 100%; height: 100%;
+}
+main .about .small-page > .inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%; height: 100%; 
+    position: relative;
+}
+main .about .small-page > .inner > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 80%;
+}
+main .about .small-page .profile {
+    width: 50%;
+}
+main .about .small-page .text {
+    width: 50%;
+    padding-left: 10px;
+    text-align-last: left;
+    line-height: 2.5;
+}
+main .about .small-page .text p:first-child {
+    font-family: 'LINESeedKR-Bd';
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 2;
+}
+main .about .small-page .skill {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+    width: 80%; height: 230px;
+
+}
+main .about .small-page .skill span {
+    display: block;
+    width: 70px; height: 70px;
+    margin: 10px auto;
+    background-color: pink;
+}
+main .about .small-page .skill span:nth-child(1) {
+    background: url('../image/icon_AE.png') no-repeat center/contain;
+}
+main .about .small-page .skill span:nth-child(2) {
+    background: url('../image/icon_AI.png') no-repeat center/contain;
+}
+main .about .small-page .skill span:nth-child(3) {
+    background: url('../image/icon_PS.png') no-repeat center/contain;
+}
+main .about .small-page .skill span:nth-child(4) {
+    background: url('../image/icon_PR.png') no-repeat center/contain;
+}
+main .about .small-page .skill span:nth-child(5) {
+    background: url('../image/icon_blender.png') no-repeat center/contain;
+}
+main .about .small-page .skill span:nth-child(6) {
+    background: url('../image/icon_HTML.png') no-repeat center/contain;
+}
+main .about .small-page .skill span:nth-child(7) {
+    background: url('../image/icon_CSS.png') no-repeat center/contain;
+}
+main .about .small-page .skill span:nth-child(8) {
+    background: url('../image/icon_JS.png') no-repeat center/contain;
+}
+
+
+/* main - Video */
+main .video {
+    width: 100%; height: 100%;
+}
+main .video .idx {
+    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; height: 100%;
+}
+
+main .video .video-left {
+    width: 50%; height: 100vh;
+    position: relative;
+}
+main .video .video-left h1 {
+    position: absolute;
+    top: 20%; left: 17%;
+    text-align: center;;
+}
+main .video .video-left .title {
+    width: 100%;
+    position: absolute;
+    top: 50%; left: 5%;
+    transform: translateY(-50%);
+}
+main .video .video-left .title h2 {
+    padding-left: 10%;
+    font-size: 3.2rem;
+    text-align: left;
+    line-height: 1.6;
+}
+main .video .video-left .title h2:first-child a {
+    position: relative;
+}
+main .video .video-left .title h2:first-child a::after {
+    width: 0;
+    content: '키네틱타이포그래피';
+    color: #afd426;
+    overflow: hidden;
+    transition: all 1s;
+    position: absolute;
+    top: -15px; left: 0;
+    white-space: nowrap;
+}
+main .video .video-left .title h2:nth-child(2) a {
+    position: relative;
+}
+main .video .video-left .title h2:nth-child(2) a::after {
+    width: 0;
+    content: '영상작품 제목(2)';
+    color: #afd426;
+    overflow: hidden;
+    transition: all 1s;
+    position: absolute;
+    top: -15px; left: 0;
+    white-space: nowrap;
+}
+main .video .video-left .title h2:nth-child(3) a {
+    position: relative;
+}
+main .video .video-left .title h2:nth-child(3) a::after {
+    width: 0;
+    content: '영상작품 제목(3)';
+    color: #afd426;
+    overflow: hidden;
+    transition: all 1s;
+    position: absolute;
+    top: -15px; left: 0;
+    white-space: nowrap;
+}
+main .video .video-left .title h2:nth-child(4) a {
+    position: relative;
+}
+main .video .video-left .title h2:nth-child(4) a::after {
+    width: 0;
+    content: '영상작품 제목(4)';
+    color: #afd426;
+    overflow: hidden;
+    transition: all 1s;
+    position: absolute;
+    top: -15px; left: 0;
+    white-space: nowrap;
+}
+main .video .video-left .title h2 a:hover::after {
+    width: 100%;
+}
+main .video .video-left .title h2 a {
+    font-family: 'LINESeedKR-Bd'; 
+    letter-spacing: 1px;   
+}
+
+main .video .video-left .more {
+    position: absolute;
+    bottom: 20%; left: 30%;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 20px;
+    text-decoration: underline;
+}
+
+main .video .video-right {
+    width: 50%; height: 100vh;
+    position: relative;
+}
+main .video .video-right a {
+    width: 100%; height: 100%;
+}
+main .video .video-right video {
+    width: 80%; height: 80%;
+    position: absolute;
+    top: 50%; left: 100%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: all .5s;
+}
+main .video .video-right a {
+    width: 100%; height: 100%;
+}
+main .video .video-right a:nth-child(1) video {
+    left: 0;
+    opacity: 1;
+}
+main .video .video-right a:nth-child(2) video {
+    background: url('../image/photo_4.jpg') no-repeat center/contain;
+}
+main .video .video-right a:nth-child(3) video {
+    background: url('../image/photo_5.jpg') no-repeat center/contain;
+}
+main .video .video-right a:nth-child(4) video {
+    background: url('../image/photo_6.jpg') no-repeat center/contain;
+}
+
+/* 반응형 1일때 영상들 슬라이더로 */
+main .video > h1 {
+    display: none;
+}
+main .video .res1 {
+    display: none;
+    width: 100%;
+}
+main .video .res1 .slide {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    position: relative;
+}
+main .video .res1 .slide em {
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: default;
+    font-style: normal;
+}
+main .video .res1 .slide video {
+    width: 60%;
+}
+main .video .res1 .slide em > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 10px 0;
+}
+main .video .res1 .slide em h2 {
+    font-size: 2.1rem;
+}
+main .video .res1 .slide em a {
+    display: block;
+    width: 20px; height: 20px;
+    padding-left: 5px;
+    font-size: 1.2rem;
+}
+main .video .res1 .slide em span {
+    color: #777;
+    font-weight: 500;
+}
+main .video .res1 .slide em p {
+    width: 50%;
+    margin:  10px auto;
+    
+}
+
+
+
+
+/* main - Graphic */
+main .graphic {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%; height: 90vh;
+    position: relative;
+}
+main .graphic h1 {
+    display: none;
+}
+main .graphic .inner {
+    width: 100%; height: 500px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+main .graphic .idx {
+    display: flex;
+    justify-content: space-evenly;
+}
+main .graphic .work {
+    width: 100%; height: 100%;
+}
+main .graphic .work a {
+    display: block;
+    width: 300px; height: 500px;
+    margin: 0 auto;
+    position: relative;
+    perspective: 600px;
+}
+main .graphic .work a img, main .graphic .work a span {
+    position: absolute;
+    top: 0; left: 0;
+    backface-visibility: hidden;
+    transition: all 1s;
+}
+main .graphic .work a img {
+    transform: rotateY(0deg);
+}
+main .graphic .work a span {
+    display: block;
+    width: 300px; height: 500px;
+    transform: rotateY(-180deg);
+    background-color: #ffafac;
+    color: #eb2b16;
+    text-align: center;
+}
+main .graphic .work a span h2 {
+    padding: 50px 20px;
+}
+main .graphic .work a span {
+    padding: 0 20px;
+}
+
+main .graphic .work:hover a img {
+    transform: rotateY(180deg);
+}
+main .graphic .work:hover a span {
+    transform: rotateY(0deg);
+}
+
+main .graphic .more {
+    display: block;
+    width: 100px; height: 20px;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%; bottom: 15%;
+    transform: translate(-50%);
+
+    font-size: .8rem;
+    text-align: center;
+    line-height: 20px;
+    text-decoration: underline;
+}
+
+/* 반응형 1일때 이미지들 슬라이더로 */
+main .graphic .res1 {
+    display: none;
+    padding-top: 40px;
+}
+main .graphic .res1 .slide {
+    width: 100%; height: 100%;
+    position: relative;
+}
+main .graphic .res1 .slide a {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-55%);
+}
+main .graphic .res1 .slide a h2 {
+    width: 100%; height: 80px;
+    padding: 0 20px;
+    font-size: 2.1rem;
+    line-height: 80px;
+}
+
+
+
+
+/* main - Process */
+main .process {
+    width: 100%; height: 100vh;
+}
+main .process h1 {
+    display: none;
+}
+main .process .slide {
+    display: flex;
+    position: relative;
+}
+main .process img {
+    display: block;
+    width: 40%;
+    position: absolute;
+    top: 50%; left: 10%;
+    transform: translateY(-50%);
+}
+main .process p {
+    display: block;
+    width: 40%;
+    padding-left: 5%;
+    position: absolute;
+    top: 50%; right: 10%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    text-align: left;
+}
+
+
+
+
+/* main - Contact */
+main .contact {
+    width: 100%; height: 100vh;
+    position: relative;
+}
+main .contact .inner {
+    display: flex;
+    width: 80%; height: 75%;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, .2);
+    border-radius: 50px 50px 0 0;
+    position: absolute;
+    left: 50%; bottom: -20%;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+main .contact .sns {
+    width: 50%; height: 100%;
+    position: relative;
+    text-align: center;
+}
+main .contact .sns > div {
+    display: flex;
+    gap: 40px;
+    position: absolute;
+    bottom: 10%; left: 10%;
+}
+
+main .contact .sns a {
+    display: block;
+    width: 50px; height: 50px;
+    background-color: aqua;
+}
+
+
+/* main - copyright */
+main .copyright {
+    padding: 50px 0;
+    background-color: #000;
+    color: #154149;
+    font-family: 'SUIT-Regular';
+    font-size: .9rem;
+}

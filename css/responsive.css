@@ -1,0 +1,199 @@
+@media screen and (max-width: 1030px) {
+
+    /* all */
+    html {
+        font-size: 12px;
+    }
+    .fp-controlArrow.fp-prev {
+        width: 40px; height: 40px;
+        margin-left: 30px;
+        border-color: none;
+        border-width: 0;
+        background: url('../image/left-arrow.png') no-repeat center/cover;
+    }
+    .fp-controlArrow.fp-next {
+        width: 40px; height: 40px;
+        margin-right: 30px;
+        border-color: none;
+        border-width: 0;
+        background: url('../image/right-arrow.png') no-repeat center/cover;
+    }
+    
+    /* header */
+    .mobile-nav { 
+        display: none;
+    }
+    .mobile-nav-btn {
+        display: none;
+    }
+
+    /* main */
+    /* main - about */
+    main .about .icon span.idx-1,
+    main .about .icon span.idx-2,
+    main .about .icon span.idx-3,
+    main .about .icon span.idx-4,
+    main .about .icon span.idx-5,
+    main .about .icon span.idx-6,
+    main .about .icon span.idx-7,
+    main .about .icon span.idx-8 {
+        display: none;
+    }
+
+    main .about .icon span.res1-1,
+    main .about .icon span.res1-2,
+    main .about .icon span.res1-3,
+    main .about .icon span.res1-4,
+    main .about .icon span.res1-5,
+    main .about .icon span.res1-6,
+    main .about .icon span.res1-7,
+    main .about .icon span.res1-8 {
+        display: block;
+    }
+
+
+    /* main - video */
+    main .video .idx {
+        display: none;
+    }
+    main .video > h1 {
+        display: block;
+        font-size: 2rem;
+        margin-bottom: 0;
+        position: absolute;
+        top: 13%; left: 50%;
+        transform: translateX(-50%);
+    }
+    main .video .res1 {
+        display: block;
+    }
+
+    /* main - graphic */
+    main .graphic {
+        display: block;
+        position: relative;
+    }
+    main .graphic h1 {
+        display: block;
+        font-size: 2rem;
+        margin-bottom: 0;
+        position: absolute;
+        top: 13%; left: 50%;
+        transform: translateX(-50%);
+    }
+    main .graphic .idx { 
+        display: none; 
+    }
+    main .graphic .res1 { 
+        display: block; 
+    }
+    main .graphic .more { 
+        display: none; 
+    }
+
+
+    /* main - process */
+    main .process .slide {
+        display: block;
+    }
+    main .process img {
+        min-width: 60%;
+        top: 50%; left: 50%;
+        transform: translate(-50%,-60%);
+    }
+    main .process p {
+        min-width: 60%;
+        padding-left: 0;
+        top: 65%; left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+    main .process h1 {
+        display: block;
+        font-size: 2rem;
+        margin-bottom: 0;
+        position: absolute;
+        top: 13%; left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+
+
+
+/* 핸드폰 사이즈 */
+@media screen and (max-width: 450px) {
+    
+    /* all */
+    html {
+        font-size: 10px;
+    }
+    .fp-controlArrow.fp-prev {
+        width: 20px; height: 20px;
+        border-color: none;
+        border-width: 0;
+        background: url('../image/left-arrow.png') no-repeat center/cover;
+    }
+    .fp-controlArrow.fp-next {
+        width: 20px; height: 20px;
+        border-color: none;
+        border-width: 0;
+        background: url('../image/right-arrow.png') no-repeat center/cover;
+    }
+
+    /* header */
+    header {
+        width: 100%;
+        padding-top: 0px;
+    }
+    header .pc-nav { 
+        display: none;
+    }
+    .mobile-nav { 
+        display: block !important;
+    }
+    .mobile-nav-btn {
+        display: block;
+    }
+    
+    
+    /* main */
+    
+    /* main - about */
+    main .about .large-page {
+        display: none;
+    }
+    main .about .small-page {
+        display: block;
+    }
+    main .about .icon span.idx-1,
+    main .about .icon span.idx-2,
+    main .about .icon span.idx-3,
+    main .about .icon span.idx-4,
+    main .about .icon span.idx-5,
+    main .about .icon span.idx-6,
+    main .about .icon span.idx-7,
+    main .about .icon span.idx-8 {
+        display: none;
+    }
+
+    main .about .icon span.res1-1,
+    main .about .icon span.res1-2,
+    main .about .icon span.res1-3,
+    main .about .icon span.res1-4,
+    main .about .icon span.res1-5,
+    main .about .icon span.res1-6,
+    main .about .icon span.res1-7,
+    main .about .icon span.res1-8 {
+        display: block;
+    }
+
+    /* main - video */
+
+    /* main - graphic */
+    
+    /* main - process */
+    main .process p {
+        top: 62%;
+    }
+}

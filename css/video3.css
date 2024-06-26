@@ -1,0 +1,162 @@
+@charset "utf-8";
+
+* {
+    margin: 0; padding: 0; 
+    box-sizing: border-box;
+}
+*::selection {
+    background-color: royalblue;
+    color: lightgreen;
+}
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* ---------------------------------- */
+
+/* header */
+
+
+/* main */
+main {
+    max-width: 100%;
+    background-color: lightcoral;
+}
+
+/* main - depth1 */
+main .depth1 {
+    width: 100%; height: 100vh;
+}
+main .depth1 .inner {
+    width: 100%; height: 100%;
+    position: relative;
+}
+main .depth1 h1 {
+    font-size: 5rem;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 9;
+    color: #fff;
+}
+main .depth1 img {
+    display: block;
+    width: 100%; height: 100vh;
+    position: absolute;
+    top: 0; left: 0;
+    object-fit: cover;
+}
+
+
+/* main depth2 */
+main .depth2 {
+    width: 100%; height: 300vh;
+}
+main .depth2 .inner {
+    display: flex;
+    width: 100%; height: 300vh;
+}
+main .depth2 .explain {
+    position: sticky;
+    top: 30px; left: 0;
+    width: 30%; height: 600px;
+    margin: 300px 50px 10px 70px;
+    background-color: lightgrey;
+}
+main .depth2 .explain h2 {
+    font-size: 2rem;
+    padding-top: 30px;
+}
+main .depth2 .explain p {
+    padding: 30px 0;
+}
+main .depth2 .explain > div {
+    display: flex;
+    gap: 30px;
+}
+main .depth2 .explain > div span {
+    display: block;
+    padding-top: 30px;
+    padding-right: 50px;
+}
+
+
+main .depth2 .detail {
+    width: 70%;
+}
+main .depth2 .detail .inner {
+    width: 100%;
+    padding-top: 100px;
+}
+main .depth2 .detail .aos {
+    width: 100%;
+    position: relative;
+}
+main .depth2 .detail .aos span {
+    display: block;
+    width: 500px; height: 300px;
+    background: url('../image/photo_2.jpg') no-repeat center/cover;
+}
+main .depth2 .detail .aos > span:nth-child(1) {
+    position: absolute;
+    top: 10%; left: 29%;
+}
+main .depth2 .detail .aos > span:nth-child(2) {
+    position: absolute;
+    top: 27%; left: 5%;
+}
+main .depth2 .detail .aos > span:nth-child(3) {
+    position: absolute;
+    top: 43%; right: 6%;
+}
+main .depth2 .detail .aos > span:nth-child(4) {
+    position: absolute;
+    top: 58%; left: 6%;
+}
+
+
+
+/* main depth3 */
+main .depth3 {
+    width: 100%; 
+    padding: 150px 0;
+}
+main .depth3 h1 {
+    font-size: 5rem;
+}
+main .depth3 .inner {
+    display: flex;
+    justify-content: space-evenly;
+}
+main .depth3 .inner > span {
+    display: block;
+    margin-top: 80px;
+    border-radius: 20px;
+}
+main .depth3 .inner > span:nth-child(1) {
+    background: url('../image/photo_3.jpg') no-repeat center/cover;
+}
+main .depth3 .inner > span:nth-child(2) {
+    background: url('../image/photo_4.jpg') no-repeat center/cover;
+}
+main .depth3 .inner > span:nth-child(3) {
+    background: url('../image/photo_6.jpg') no-repeat center/cover;
+}
+main .depth3 .inner > span a {
+    display: block;
+    width: 500px; height: 300px;
+}
+
+
+/* footer */
+footer {
+    width: 100%; height: 150px;
+    background-color: #333;
+}
+footer .inner {}
+footer .inner p {
+    color: #fff;
+    text-align: center;
+    line-height: 150px;
+}
